@@ -5,6 +5,9 @@ set(LLVM_LINK_COMPONENTS
   )
 
 add_clang_library(clangStaticAnalyzerCheckers
+
+  PthreadCreateChecker.cpp
+
   AnalysisOrderChecker.cpp
   AnalyzerStatsChecker.cpp
   ArrayBoundChecker.cpp
@@ -137,7 +140,6 @@ add_clang_library(clangStaticAnalyzerCheckers
   WebKit/RawPtrRefCallArgsChecker.cpp
   WebKit/UncountedLambdaCapturesChecker.cpp
   WebKit/RawPtrRefLocalVarsChecker.cpp
-
   LINK_LIBS
   clangAST
   clangASTMatchers

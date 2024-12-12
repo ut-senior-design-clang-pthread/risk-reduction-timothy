@@ -611,6 +611,11 @@ def PthreadLockChecker : Checker<"PthreadLock">,
   Dependencies<[PthreadLockBase]>,
   Documentation<HasDocumentation>;
 
+    //Pthread Create Checker
+def PthreadCreateChecker : Checker<"PthreadCreate">,
+    HelpText<"Checks for instances of pthread_create(3)">,
+    Documentation<NotDocumented>;
+
 def SimpleStreamChecker : Checker<"SimpleStream">,
   HelpText<"Check for misuses of stream APIs">,
   Documentation<HasDocumentation>;
@@ -697,6 +702,7 @@ def PureVirtualCallChecker : Checker<"PureVirtualCall">,
   HelpText<"Check pure virtual function calls during construction/destruction">,
   Dependencies<[VirtualCallModeling]>,
   Documentation<HasDocumentation>;
+
 } // end: "cplusplus"
 
 let ParentPackage = CplusplusOptIn in {
